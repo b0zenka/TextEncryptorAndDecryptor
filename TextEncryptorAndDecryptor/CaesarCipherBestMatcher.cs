@@ -21,7 +21,8 @@ public static class CaesarCipherBestMatcher
         {
             foreach (var item in detectResult[i])
             {
-                if (item == null || !item.reliable) 
+                // only reliable and english text
+                if (item == null || !item.reliable || !item.language.Equals("en")) 
                     continue;
 
                 if (!resultDic.ContainsKey(decrypts[i]))
